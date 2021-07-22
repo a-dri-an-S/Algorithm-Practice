@@ -9,3 +9,20 @@ const maximumWealth = accounts => {
 // 1. map through accounts array
 // 2. sum each secondary array w/ reduce method
 // 3. return largest wealth with Math.max and spread operator
+
+const maximumWealth = accounts => {
+    let largestWealth = 0;
+    for (let acct in accounts) {
+        const customerWealth = accounts[acct].reduce((a, b) => a + b);
+        if (customerWealth > largestWealth) {
+            largestWealth = customerWealth
+        }
+    }
+    return largestWealth
+}
+
+// 1. declare variable largest wealth and set it to 0
+// 2. loop through accounts array
+// 3. sum subarray with reduce method
+// 4. if current wealth > largest wealth, set current wealth as new largest wealth
+// 5. return largest wealth
