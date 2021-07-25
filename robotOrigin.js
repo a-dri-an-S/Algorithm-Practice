@@ -26,6 +26,6 @@ const judgeCircle = moves => {
 }
 
 // 1. Declare x & y, assign them to 0 (start points on x + y axis)
-// 2. Iterate through string
+// 2. Iterate through string with for loop
 // 3. Use switch statement to increment or decrement on x/y axis, depending on movement & direction
 // 4. if x & y are both equal to 0 (starting point), return true 
