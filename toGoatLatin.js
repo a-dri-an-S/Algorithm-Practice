@@ -43,3 +43,15 @@ const toGoatLatin = sentence => {
 // 10. Push (arr joined to string, concatenated to m to aa) into goatArr
 // 11. Increment i by 1 for the next iteration
 // 12. return goatArr joined back to string with spaces between each word
+
+const toGoatLatin = (sentence, vowels = ["a", "e", "i", "o", "u"]) => sentence.split(" ").map((word, i) => {
+    let aa = Array(i + 2).fill("a").join("");
+    let arr = word.split("")
+    if (word.length === 1 || vowels.includes(word[0].toLowerCase())) {
+        return word + "m" + aa
+    } else {
+        arr.push(arr.shift());
+        return arr.join("") + "m" + aa
+    }
+}
+).join(" ")
