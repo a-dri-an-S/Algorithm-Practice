@@ -32,6 +32,6 @@ const luckyNumbers = matrix => {
 // 7. Push num based on current col into colArr to fill with all nums in col
 // 8. Push max num in current colArr into maxCol array
 //  - Spread current colArr into Math.max to get max num
-// 9. Use for loop to iterate through minrow
+// 9. Use for loop to iterate through minRow
 // 10. if maxCol includes current min number in row, push number into luckyNum arr
 // 11. Return luckyNum array
