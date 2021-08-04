@@ -31,3 +31,9 @@ sortByBits = arr => {
 // 8. Use for loop to iterate through bitCounts array
 // 9. Push current num at index 0 into sortedNums
 // 10. Return sortedNums
+
+// One Liner
+
+const sortByBits = arr => arr.map(num => [num, num.toString(2).split("").reduce((a, b) => +a + +b)])
+    .sort((a, b) => a[0] - b[0]).sort((a, b) => a[1] - b[1])
+    .filter(a => a.pop()).flat();
