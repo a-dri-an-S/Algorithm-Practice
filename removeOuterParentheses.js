@@ -9,7 +9,7 @@ const removeOuterParentheses = s => {
     let parenthArr = [];
     let splitString = s.split("")
 
-    for (let i = 0.; i < splitString.length; i++) {
+    for (let i = 0; i < splitString.length; i++) {
         if (splitString[i] === "(") {
             count++
         } else {
