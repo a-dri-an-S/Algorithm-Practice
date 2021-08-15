@@ -29,3 +29,19 @@ const findLucky = function(arr) {
 // 7. Reset consecNum to 0
 // 8. Else If, current num is equal to next num, increment consecNum by 1
 // 9. Return largest consec lucky num by spreading counts in Math.max
+
+// Solution #2
+const findLucky = arr => {
+    let counts = {}
+    for (let num of arr) {
+        if (counts[num] === undefined) {
+            counts[num] = 0
+        }
+        counts[num]++
+    }
+    
+    const countArr = Object.entries(counts)
+    const countFiltered = countArr.filter(arr => Number(arr[0]) === arr[1]).flat()
+    
+    return  countFiltered.length === 0 ? -1 : Math.max(...countFiltered)
+};
