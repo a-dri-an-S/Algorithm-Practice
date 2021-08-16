@@ -27,3 +27,31 @@ const specialArray = nums => {
 // 5. Within nested for loop, If current num is greater or equal to current i, increment count by 1
 // 6. Within first loop, if current i is equal to count, set x to i and break
 // 7. Return x
+
+
+// SOLUTION #2
+
+const specialArray = function(nums) {
+    let x = -1;
+    let i = 1
+    
+    while (i <= nums.length) {
+        let count = 0
+        nums.forEach(num => {
+            num >= i ? count++ : null;
+        })
+        i === count ? x = i : null;
+        i++
+    }
+    return x
+};
+
+// 1. Declare x and set it to -1
+// 2. Declare i and set it to 1
+// 3. Use while loop and loop until i is equal to nums.length
+// 4. Declare count and set it to 0
+// 5. Use forEach method to iterate through nums array and perform the following:
+//  - Ternary statement: if current num >= current i; increment count by 1, else null
+// 6. Ternary statement: If i is equal to count, set x = 1, else null
+// 7. Increment i by 1 to continue loop
+// 8. Return x
