@@ -31,3 +31,24 @@ const majorityElement = nums => {
 //  - Reset count to 0
 // 6. Else, increment count by 1
 // 7. Return majEl
+
+// SOLUTION #2
+const majorityElement = function(nums) {
+    const count = {}
+    
+    for (let num of nums) {
+        if (count[num] ===  undefined) {
+            count[num] = 0
+        }
+        count[num]++
+    }
+    const counts = Object.entries(count).sort((a, b) => b[1] - a[1])
+    return counts[0][0]
+};
+
+// 1. Declare count and set it to an empty object
+// 2. Use for loop to iterate through nums array
+// 3. If current num is not found in object (undefined), add it to counts object and set it to 0
+// 4. Increment num in counts object by 1
+// 5. Declare counts and set it to an array of key pair values via Object.entries method, then sort it in descending order based on value with sort method
+// 6. Return count at index[0][0] to get element with most occurrences
