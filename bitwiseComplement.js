@@ -18,3 +18,11 @@ const bitwiseComplement = n => {
 //  - If current el is equal to "1", push 0 into arr, else push 1
 // 4. Declare invNum and set it to array joined into a string via join method
 // 5. Return num by taking binary string and converting it to base -10 num via parseInt with radix 2
+
+
+// One Liner
+const bitwiseComplement = n => parseInt(n.toString(2)
+        .split("")
+        .map(el => {
+        return el === "1" ? 0 : 1
+        }).join(""), 2);
