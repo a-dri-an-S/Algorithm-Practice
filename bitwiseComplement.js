@@ -22,7 +22,6 @@ const bitwiseComplement = n => {
 
 // One Liner
 const bitwiseComplement = n => parseInt(n.toString(2)
-        .split("")
-        .map(el => {
-        return el === "1" ? 0 : 1
-        }).join(""), 2);
+    .split("")
+    .map(el => el === "1" ? 0 : 1)
+    .join(""), 2);
