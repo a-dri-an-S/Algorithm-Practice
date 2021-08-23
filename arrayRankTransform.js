@@ -26,3 +26,23 @@ const arrayRankTransform = (arr) => {
 // 4. Use nested for loop to iterate through arrSorted array
 // 5. If arr at current i is equal to arrSorted at current j, push j + i (rank = index + 1)
 // 6. Return newArr
+
+// Solution with forEach
+const arrayRankTransform = (arr) => {
+    let newArr = [];
+    const arrSorted = [...new Set([...arr])].sort((a, b) => a - b);
+    
+    arr.forEach(num => {
+        newArr.push(arrSorted.indexOf(num) + 1)
+    })
+    
+    return newArr
+};
+
+// 1. Declare newArr and set it to an empty array
+// 2. Declare arrSorted and set it to unique characters in arr, sorted in ascending order
+//  - Spread arr into new Set to make both a copy of arr and to extract all unique characters
+//  - Sort new array in ascending order via sort method
+// 3. Use forEach to iterate through arr array and perform the following:
+// 4. Find index of num inside of sortedArr, increment index by 1 and push into newArr
+// 5. Return newArr
