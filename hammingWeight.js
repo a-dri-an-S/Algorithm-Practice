@@ -22,3 +22,18 @@ const hammingWeight = (n) => {
 // 3. Use for loop to iterate through bitArr array
 // 4. If current bit is equal to "1", increment count by 1
 // 5. Return count
+
+
+// Solution with forEach
+const hammingWeight = (n) => {
+    let count = 0;
+    n.toString(2).split("").forEach(bit => {
+        bit === '1' ? count++ : count;
+    })
+    return count
+};
+
+
+
+// One Liner Solution w/ reduce 
+const hammingWeight = (n) => n.toString(2).split("").reduce((a, b) => Number(a) +  Number(b), 0);
