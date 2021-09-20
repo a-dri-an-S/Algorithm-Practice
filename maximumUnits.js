@@ -5,7 +5,7 @@
 // Return the maximum total number of units that can be put on the truck.
 
 const maximumUnits = (boxTypes, truckSize) => {
-    let totalUnites = 0;
+    let totalUnits = 0;
     boxTypes.sort((a, b) => b[1] - a[1]);
     for (let box of boxTypes) {
         while (box[0] > 0 && truckSize > 0) {
