@@ -6,29 +6,25 @@ const convertToTitle = function(colNum) {
     while (colNum > 0) { 
         
         if (colNum > 26) {
-            
             let letterNum = colNum % 26;
             
             if (letterNum === 0) {
                 letterNum = 26;
                 colNum = colNum - 1;
+
             }
-            
             const letter = String.fromCharCode(letterNum + 64);
             colLetterArr.push(letter);
             
-        } else {
-            
+        } else { 
             const letter = String.fromCharCode(colNum + 64);
             colLetterArr.push(letter);
             colNum = 0
             
         }
-        
         colNum = Math.floor(colNum / 26);
         
     } 
-    
     return colLetterArr.reverse().join("");
 };
 
