@@ -34,4 +34,4 @@ const validPalindrome = function(s) {
 //  - Reverse array with reverse() method
 //  - Join array into string with join() method
 // 7. If newStr is equal to reversed, return true
-// 8. If no contitions are met after loop, return false
+// 8. If no conditions are met after loop, return false
