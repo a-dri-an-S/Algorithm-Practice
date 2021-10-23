@@ -3,15 +3,20 @@
 // Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
 
 const addToArrayForm = function(num, k) {
-    const arrNum = parseInt(num.join(''))
-    const ans = (arrNum + k).toString().split('')
-    return ans.map(char => parseInt(char))
+    num = BigInt(num.map(int => int.toString()).join(""));
+    k = BigInt(k);
+    
+    const sum = num + k;
+    
+    return [...sum.toString()];
 };
 
-// 1. Declare arrNum and set it to number dervied from num arr
-//  - Use join() method to join num elements into a string
-//  - Use parseInt to conver that numerical string into an integer
-// 2. Declare ans and set it to an array of numerical chars after the summation of arrNum and k
-//  - Sum arrNum and k and convert to string with toString() method
-//  - Use split() method to turn string into array of individual numerical chars
-// 3. Iterate and modify ans array with map() method, convert every numerical char into an integer
+// 1. Set num equal to a BigInt primitive
+//  - Use map to modify num array and convert all values from integers to strings
+//  - Use join() method to join num array into a string
+//  - Use BigInt() constructor to convert string to a bigint primitive
+// 2. Set k equal to k converted to a bigint primitive with BigInt() constructor
+// 3. Declare sum and set it to the sum between num and k
+// 4. Return an array of single strings obtained from sum
+//  - Use toString() method to convert bigint into a string
+//  - Use spread syntax to unpack string into an empty array
