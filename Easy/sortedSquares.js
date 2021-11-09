@@ -40,4 +40,4 @@ const sortedSquares = function(nums) {
 // 7. Else 
 //  - Prepend value squares[left] to result array with unshift() method
 //  - Increment left by 1
-// 8. Return result
+// 8. Return result.
