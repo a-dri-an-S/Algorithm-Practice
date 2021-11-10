@@ -21,3 +21,29 @@ const maxSubArray = function(nums) {
 // 5. Let sum equal to sum + currnt num in nested loop (num[j])
 // 6. Let max equal to largest between max and sum with Math.max() function
 // 7. Return max
+
+// KADANE'S ALGORITHM
+
+const maxSubArray = function(nums) {
+    let currSum = 0;
+    let maxSum = -Infinity;
+    const size = nums.length; 
+        
+    for (const num of nums) {
+        currSum += num;
+        maxSum = Math.max(maxSum, currSum);
+        if (currSum < 0) currSum = 0;
+    }
+    
+    return maxSum;
+};
+
+// 1. Declare currSum and set it to 0
+// 2. Declare maxSum and set it to -Infinity (smallest number)
+// 3. Declare size and set it length of nums array
+// 4. Use for loop to iterate through nums array
+//  - Set currSum equal to currSum + num (current value in nums array)
+//  - Set maxSum equal to largest number between maxSum and currSum
+//      - Use Math.max to get largest number between maxSum and currSum
+//  - If currSum is less than 0, set currSum equal to 0
+// 5. When loop ends, return maxSum
