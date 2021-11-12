@@ -42,3 +42,26 @@ const generate = function(numRows) {
 // 13. Add arr array to the end of pascTri array
 // 14. Return pascTri array
 
+// SOLUTION #2
+
+var generate = function(numRows) {
+    const pascTri = [];
+    
+    for (let i = 1; i <= numRows; i++) {
+        if (i === 1) pascTri.push([1]);
+        if (i === 2) pascTri.push([1, 1])
+        if (i > 2) {
+            const row = [1];
+            for (let j = 0; j < i - 2; j++) {
+                const left = pascTri[i - 2][j];
+                const right = pascTri[i - 2][j + 1];
+                const sum = left + right;
+                row.push(sum);
+            }
+            row.push(1); 
+            pascTri.push(row);
+        }
+        
+    }
+    return pascTri;
+};
