@@ -37,3 +37,6 @@ const hammingWeight = (n) => {
 
 // One Liner Solution w/ reduce 
 const hammingWeight = (n) => n.toString(2).split("").reduce((a, b) => Number(a) +  Number(b), 0);
+
+// 2nd One-Liner Solution
+const hammingWeight = (n) => n.toString(2).replaceAll('0', '').length;
