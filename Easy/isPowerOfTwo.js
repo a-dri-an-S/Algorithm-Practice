@@ -22,3 +22,22 @@ const isPowerOfTwo = (n) => {
 // 5. If n is equal to product, return true
 // 6. Increment powerOf by 1
 // 7. Return false if no conditions are met
+
+// 2nd Solution
+
+const isPowerOfTwo = function(n) {
+    if (n === 1) return true;
+    
+    while (n > 1) {
+        n /= 2;
+        if (n === 1) return true
+    }
+    
+    return false;
+};
+
+// 1. If n is equal to 1, return true
+// 2. Use while loop to loop while n is greater than 1
+//  - Set n equal to n divided by 2
+//  - If n is equal to 1, return true
+// 3. Return false
