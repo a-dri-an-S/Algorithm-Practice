@@ -27,3 +27,21 @@ const removeOccurrences = function(s, part) {
 //              - Use slice() method to add substring before and after sub, together
 //  - End loop
 // 2. Return s
+
+// Solution using replace()
+
+const removeOccurrences = function(s, part) {
+    
+    while (s.includes(part)) {
+        s = s.replace(part, '');
+    }
+
+    return s;
+};
+
+// 1. Use while loop to create loop while s includes part
+//  - Use includes to check if s contains part
+//  - Set s equal to s with part removed from s string
+//      - Use replace() method to remove part and replace with empty string ("")
+//  - End loop
+// 2. Return s
