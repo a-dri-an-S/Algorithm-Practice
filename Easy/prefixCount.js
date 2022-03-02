@@ -32,3 +32,26 @@ const prefixCount = function(words, pref) {
 //  - Else, set check equal to true
 // 5. After nested loop runs, if check IS EQUAL to true, increment count by 1
 // 6. After loop ends, return count
+
+// USING SUBSTR TO EXTRACT STRING
+
+const prefixCount = function(words, pref) {
+    let count = 0;
+    let i = 0;
+    
+    while (idx < words.length) {
+        if (words[i].substr(0, pref.length) === pref) {
+            count++;
+        }
+        i++;
+    }
+    
+    return count;
+};
+
+// 1. Declare count and idx and set both to 0
+// 2. Use while loop to create loop while idx < words.length
+//  - If prefix of current word at index-i IS EQUAL to pref, increment count by 1
+//      - Use substr to get prefix of word, starting at index-0, with length matching length of pref
+//  - Increment i by 1
+// 3. When while loop ends, return count
